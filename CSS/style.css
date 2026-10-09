@@ -1,0 +1,298 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=DM+Serif+Display:ital@0;1&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap');
+
+/* ==========================================================================
+   Global Styles
+   ========================================================================== */
+body {
+    background-color: #faf9f6; /* Warm off-white paper feel */
+    color: #2b2b2b; /* Softer dark charcoal for text instead of harsh pure black */
+    font-family: "Playfair Display", Times, "Times New Roman", serif;
+    font-size: 18px;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 15px; /* Keeps text from touching screen edges on mobile */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex-grow: 1;
+}
+
+p, main ul {
+    font-family: Georgia, Times, "Times New Roman", serif;
+}
+
+main ul {
+    margin-left: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: mediumpurple;
+}
+
+/* Base image responsiveness safety */
+img {
+    max-width: 100%;
+}
+main a {
+    position: relative;
+    text-decoration: none;
+    color: mediumpurple;
+    transition: color 0.2s ease;
+}
+
+main a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    bottom: -1px;
+    left: 0;
+    background-color: mediumpurple;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+main a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+/* Accent border on section subheadings */
+main h3 {
+    border-left: 3px solid darkgreen;
+    padding-left: 10px;
+    margin-top: 35px;
+}
+main p {
+    line-height: 1.65; /* Gives dense academic descriptions room to breathe */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+main {
+    animation: fadeIn 0.4s ease-out forwards;
+}
+
+img {
+    border-radius: 4px;
+}
+
+/* ==========================================================================
+   Header & Navigation
+   ========================================================================== */
+.header-container {
+    display: flex;
+    align-items: baseline; 
+    justify-content: space-between; 
+    padding-top: 20px; 
+}
+
+.header-name h1 {
+    margin: 0; 
+}
+
+.header-name h1 a.home-link {
+    font-family: Times, "Times New Roman", serif;
+    text-decoration: none;
+    color: mediumpurple;
+}
+
+.nav-bar nav ul {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    gap: 15px; 
+}
+
+.nav-bar nav ul li a {
+    font-size: 25px;
+    color: mediumpurple;
+    text-decoration: none;
+    font-family: "Bodoni Moda", serif;
+    padding: 0 16px;
+}
+
+.nav-bar nav ul li a:hover {
+    background-color: lightgray;
+    border-radius: 4px;
+}
+.nav-bar nav ul li a {
+    border-radius: 6px;
+}
+
+.nav-bar nav ul li a:hover {
+    background-color: rgba(147, 112, 219, 0.12); /* Subtle purple wash */
+}
+
+hr {
+	color: darkgreen;
+    height: 2px;
+}
+
+/* ==========================================================================
+   Page Specific & Components
+   ========================================================================== */
+
+/* Index Flex Layout */
+.flex-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.heading-column h2 {
+    margin: 0;
+    line-height: 1.1;
+    font-size: 84px;
+}
+
+.comm-arts-link a {
+    text-decoration: none;
+    color: mediumpurple;
+}
+
+.image-column img {
+    max-width: 900px;
+    height: auto;
+}
+
+/* About Page */
+.right-side-img { 
+    float: right;
+    width: 500px;
+    height: auto;
+    margin-left: 20px;
+}
+
+.about-me-text {
+    font-size: 23px;
+    margin-top: 10px;
+}
+
+/* Creates a refined editorial opening letter for main bio paragraphs */
+.about-me-text::first-letter {
+    font-size: 3.2em;
+    float: left;
+    line-height: 0.8;
+    margin-right: 10px;
+    color: mediumpurple;
+    font-family: "Playfair Display", serif;
+}
+
+/* Image Rows */
+.research-imgs {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    gap: 5px;
+}
+
+.research-imgs img {
+    flex: 1 1 0;
+    min-width: 0;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 6px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.research-imgs img:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+	text-align: center;
+	color: #002100;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+h2, h3, h4 {
+    scroll-margin-top: 30px; /* Ensures scrolled-to headings have breathing room */
+}
+
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+footer {
+    margin-top: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;	
+    text-align: center;
+}
+
+.footer-logo {
+    max-height: 100px;
+    width: auto;
+}
+
+/* ==========================================================================
+   Mobile Responsiveness (Max Width: 768px)
+   ========================================================================== */
+@media (max-width: 768px) {
+    /* Header stacks vertically to prevent menu clipping */
+    .header-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .nav-bar nav ul {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .nav-bar nav ul li a {
+        font-size: 20px;
+        padding: 4px 8px;
+    }
+
+    /* Index layout stacks headshot above text */
+    .flex-container {
+        flex-direction: column-reverse;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .heading-column h2 {
+        font-size: 48px;
+    }
+
+    /* Unfloats the About image so text isn't squeezed into a tiny column */
+    .right-side-img {
+        float: none;
+        width: 100%;
+        margin: 0 0 15px 0;
+    }
+
+    .about-me-text {
+        font-size: 20px;
+    }
+
+    /* Stacks photo rows into two columns instead of 6 tiny slivers */
+    .research-imgs {
+        flex-wrap: wrap;
+    }
+
+    .research-imgs img {
+        flex: 1 1 45%;
+    }
+
+    footer {
+        margin-top: 80px;
+    }
+}
